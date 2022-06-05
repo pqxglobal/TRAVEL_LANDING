@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+:root {
+    --overlay-color: #03a9f4;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,6 +23,7 @@
     background: #111;
     color: #fff;
     z-index: 2;
+    transition: 0.5s;
 
     header {
         position: absolute;
@@ -41,6 +46,10 @@
         object-fit: cover;
         opacity: 0.8;
     }
+}
+
+.showcase.active {
+    right: 300px;
 }
 
 .logo {
@@ -72,7 +81,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #03a9f4;
+    background: var(--overlay-color);
     mix-blend-mode: overlay;
 }
 
@@ -96,5 +105,93 @@
 
     p {
         font-size: 1.1em;
+        margin: 20px 0;
+        font-weight: 400;
+        max-width: 700px;
+    }
+
+    a {
+        display: inline-block;
+        font-size: 1em;
+        background: #fff;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: #111;
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.2s;
+
+        &:hover {
+            letter-spacing: 6px;
+        }
+    }
+}
+
+.social {
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+        list-style: none;
+
+        a {
+            display: inline-block;
+            filter: invert(1);
+            margin-right: 20px;
+            transform: scale(0.5);
+            transition: 0.5s;
+
+            &:hover {
+                transform: scale(0.5) translateY(-15px);
+            }
+        }
+    }
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        position: relative;
+        list-style: none;
+
+        li {
+            a {
+                text-decoration: none;
+                font-size: 24px;
+                color: #111;
+
+                &:hover {
+                    color: var(--overlay-color);
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 798px) {
+    .showcase,
+    .showcase header {
+        padding: 40px;
+    }
+    
+    .text h2 {
+        font-size: 3em;
+    }
+
+    .text h3 {
+        font-size: 2em;
     }
 }

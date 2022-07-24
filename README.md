@@ -2,4 +2,4 @@
 # SASS Practice Project
 > This repo contains code for the Travel Landing project.</br>
 > This is a bare SASS project with minor modifications for practicing purposes</br>
-> You can see the result here: https://adorable-phoenix-13bda5.netlify.app/
+> You can see the result here: https://pqxglobal-travel-landing.netlify.app/
